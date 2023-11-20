@@ -1,0 +1,13 @@
+D:\5th semester\SE LAB\SHMS\SHMS\bin\Debug\SHMS.exe.config
+D:\5th semester\SE LAB\SHMS\SHMS\bin\Debug\SHMS.exe
+D:\5th semester\SE LAB\SHMS\SHMS\bin\Debug\SHMS.pdb
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.csproj.AssemblyReference.cache
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Properties.Resources.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.csproj.GenerateResource.cache
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.csproj.CoreCompileInputs.cache
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.exe
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.pdb
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Start.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.UserRegister.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.UserLogin.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.ManagerDashboard.resources
