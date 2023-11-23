@@ -11,3 +11,4 @@ D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Start.resources
 D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.UserRegister.resources
 D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.UserLogin.resources
 D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.ManagerDashboard.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Projects.resources

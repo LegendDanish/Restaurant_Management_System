@@ -16,5 +16,12 @@ namespace SHMS
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form Projects = new Projects();
+            Projects.Show();
+            this.Hide();
+        }
     }
 }

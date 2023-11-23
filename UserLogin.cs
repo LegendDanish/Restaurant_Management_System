@@ -56,6 +56,9 @@ namespace SHMS
                     }
                 }
             }
+            Form ManagerDashboard = new ManagerDashboard();
+            ManagerDashboard.Show();
+            this.Hide();
         }
     }
     } 
