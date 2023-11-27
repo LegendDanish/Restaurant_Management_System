@@ -12,3 +12,14 @@ D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.UserRegister.resources
 D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.UserLogin.resources
 D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.ManagerDashboard.resources
 D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Projects.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Clients.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Employee.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Invoices.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.LeaveRequests.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Milestones.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Payments.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.PerformanceReview.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Projectbudget.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Projectresources.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Resources.resources
+D:\5th semester\SE LAB\SHMS\SHMS\obj\Debug\SHMS.Task.resources

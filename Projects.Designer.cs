@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DELETE = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button4 = new System.Windows.Forms.Button();
@@ -45,10 +49,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DELETE = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +80,24 @@
             this.panel1.Size = new System.Drawing.Size(800, 750);
             this.panel1.TabIndex = 0;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(204, 63);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(264, 20);
+            this.textBox4.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(51, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "ProjectID";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -90,6 +109,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(679, 257);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // EDIT
+            // 
+            this.EDIT.HeaderText = "EDIT";
+            this.EDIT.Name = "EDIT";
+            this.EDIT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EDIT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DELETE
+            // 
+            this.DELETE.HeaderText = "DELETE";
+            this.DELETE.Name = "DELETE";
+            this.DELETE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DELETE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dateTimePicker2
             // 
@@ -224,43 +257,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 23);
+            this.label1.Location = new System.Drawing.Point(263, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Projects";
-            // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "EDIT";
-            this.EDIT.Name = "EDIT";
-            this.EDIT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EDIT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DELETE
-            // 
-            this.DELETE.HeaderText = "DELETE";
-            this.DELETE.Name = "DELETE";
-            this.DELETE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DELETE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(51, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 22);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "ProjectID";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(204, 63);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(264, 20);
-            this.textBox4.TabIndex = 19;
             // 
             // Projects
             // 
@@ -300,5 +301,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn DELETE;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

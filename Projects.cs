@@ -122,14 +122,28 @@ namespace SHMS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["EDIT"].Index)
+            if (dataGridView1.Columns["Edit"].Index == e.ColumnIndex)
             {
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM  Projects", con);
+                
+                textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["ProjectId"].Value.ToString();
                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
                 dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+
             }
+               /* if (e.ColumnIndex == dataGridView1.Columns["EDIT"].Index)
+                {
+                    textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["ProjectID"].Value.ToString();
+                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+                    dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+                }*/
 
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["DELETE"].Index)
             {

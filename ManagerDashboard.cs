@@ -23,5 +23,29 @@ namespace SHMS
             Projects.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            Form Clients = new Clients();
+            Clients.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Form Employee = new Employee();
+            Employee.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            Form LeaveRequests = new LeaveRequests();
+            LeaveRequests.Show();
+            this.Hide();
+        }
     }
 }
