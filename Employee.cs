@@ -77,5 +77,82 @@ namespace SHMS
                 }
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns["Edit"].Index == e.ColumnIndex)
+            {
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM  Employees", con);
+
+                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["EmployeeId"].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+
+            }
+            /* if (e.ColumnIndex == dataGridView1.Columns["EDIT"].Index)
+             {
+                 textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["ProjectID"].Value.ToString();
+                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                 textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                 dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+                 dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+             }*/
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["DELETE"].Index)
+            {
+                string connectionString = @"Data Source=(local);Initial Catalog=SH;Integrated Security=True";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Create an SQL UPDATE statement to modify the specified project record
+                    using (SqlCommand command = new SqlCommand("Update Employees set Active = 0 where @EmployeeID=EmployeeID", connection))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeID", dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                        // Perform the delete operation based on the selected row
+                        dataGridView1.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Deleted successfully!");
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=(local);Initial Catalog=SH;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Create an SQL UPDATE statement to modify the specified project record
+                using (SqlCommand command = new SqlCommand("Update Employees set FirstName = @FirstName, LastName = @LastName, ContactInfo = @ContactInfo, Skills = @Skills where @EmployeeID=EmployeeID", connection))
+
+                {
+                    command.Parameters.AddWithValue("@EmployeeID", textBox1.Text);
+                    command.Parameters.AddWithValue("@FirstName", textBox2.Text);
+                    command.Parameters.AddWithValue("@LastName", textBox3.Text);
+                    command.Parameters.AddWithValue("@ContactInfo", textBox4.Text);
+                    command.Parameters.AddWithValue("@Skills", textBox5.Text);
+
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Record updated successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occurred while updating the record.");
+                    }
+                }
+
+            }
+        }
     }
 }
