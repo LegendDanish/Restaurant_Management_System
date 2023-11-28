@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DELETE = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DELETE = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,15 +75,106 @@
             this.panel1.Size = new System.Drawing.Size(824, 639);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(277, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EDIT,
+            this.DELETE});
+            this.dataGridView1.Location = new System.Drawing.Point(42, 370);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(679, 257);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // EDIT
+            // 
+            this.EDIT.HeaderText = "EDIT";
+            this.EDIT.Name = "EDIT";
+            this.EDIT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EDIT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DELETE
+            // 
+            this.DELETE.HeaderText = "DELETE";
+            this.DELETE.Name = "DELETE";
+            this.DELETE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DELETE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(344, 313);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(249, 39);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Retrieve";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(75, 317);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(240, 35);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Update";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(344, 263);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(249, 39);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(75, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(240, 39);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Insert";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(225, 218);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(266, 20);
+            this.textBox5.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(71, 216);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 22);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "skills";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(225, 183);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(266, 20);
+            this.textBox4.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(71, 180);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 22);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "contactinfo";
             // 
             // textBox3
             // 
@@ -123,6 +214,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(225, 73);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(266, 20);
             this.textBox1.TabIndex = 8;
             // 
@@ -136,104 +228,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "employeeId";
             // 
-            // label5
+            // label1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 22);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "contactinfo";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(225, 183);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(266, 20);
-            this.textBox4.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(71, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 22);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "skills";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(225, 218);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(266, 20);
-            this.textBox5.TabIndex = 16;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(344, 313);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(249, 39);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Retrieve";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(75, 317);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(240, 35);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(344, 263);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(249, 39);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(75, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(240, 39);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDIT,
-            this.DELETE});
-            this.dataGridView1.Location = new System.Drawing.Point(42, 370);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(679, 257);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "EDIT";
-            this.EDIT.Name = "EDIT";
-            this.EDIT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EDIT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DELETE
-            // 
-            this.DELETE.HeaderText = "DELETE";
-            this.DELETE.Name = "DELETE";
-            this.DELETE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DELETE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(277, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Employee";
             // 
             // Employee
             // 
