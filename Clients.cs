@@ -62,7 +62,7 @@ namespace SHMS
                 connection.Open();
 
                 // Create an SQL UPDATE statement to modify the specified project record
-                string sqlQuery = "select * from Clients";
+                string sqlQuery = "select * from Clients where Active=1";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
                 {
                     DataTable dataTable = new DataTable();
@@ -133,9 +133,17 @@ namespace SHMS
                     using (SqlCommand command = new SqlCommand("Update Clients set Active = 0 where @ClientID=ClientID", connection))
                     {
                         command.Parameters.AddWithValue("@ClientID", dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-                        // Perform the delete operation based on the selected row
-                        dataGridView1.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Deleted successfully!");
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            dataGridView1.Rows.RemoveAt(e.RowIndex);
+                            MessageBox.Show("Deleted successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("An error occurred while deleting the record.");
+                        }
                     }
                 }
             }

@@ -100,7 +100,7 @@ namespace SHMS
                 connection.Open();
 
                 // Create an SQL UPDATE statement to modify the specified project record
-                string sqlQuery = "select * from Projects";
+                string sqlQuery = "select * from Projects where Active=1";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
                 {
                     DataTable dataTable = new DataTable();
@@ -117,7 +117,7 @@ namespace SHMS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -126,7 +126,7 @@ namespace SHMS
             {
                 var con = Configuration.getInstance().getConnection();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM  Projects", con);
-                
+
                 textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["ProjectId"].Value.ToString();
                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -135,15 +135,15 @@ namespace SHMS
                 dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
 
             }
-               /* if (e.ColumnIndex == dataGridView1.Columns["EDIT"].Index)
-                {
-                    textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["ProjectID"].Value.ToString();
-                    textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
-                    dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
-                }*/
+            /* if (e.ColumnIndex == dataGridView1.Columns["EDIT"].Index)
+             {
+                 textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["ProjectID"].Value.ToString();
+                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                 textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                 dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+                 dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+             }*/
 
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["DELETE"].Index)
             {
@@ -156,9 +156,18 @@ namespace SHMS
                     using (SqlCommand command = new SqlCommand("Update Projects set Active = 0 where @ProjectID=ProjectID", connection))
                     {
                         command.Parameters.AddWithValue("@ProjectID", dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-                        // Perform the delete operation based on the selected row
-                        dataGridView1.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Deleted successfully!");
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            dataGridView1.Rows.RemoveAt(e.RowIndex);
+                            MessageBox.Show("Deleted successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("An error occurred while deleting the record.");
+                        }
                     }
                 }
             }

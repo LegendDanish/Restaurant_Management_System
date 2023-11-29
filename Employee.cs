@@ -63,7 +63,7 @@ namespace SHMS
                 connection.Open();
 
                 // Create an SQL UPDATE statement to modify the specified project record
-                string sqlQuery = "select * from Employees";
+                string sqlQuery = "select * from Employees where Active=1";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
                 {
                     DataTable dataTable = new DataTable();
@@ -83,7 +83,7 @@ namespace SHMS
             if (dataGridView1.Columns["Edit"].Index == e.ColumnIndex)
             {
                 var con = Configuration.getInstance().getConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM  Employees", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM  Employees ", con);
 
                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["EmployeeId"].Value.ToString();
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -113,10 +113,20 @@ namespace SHMS
                     // Create an SQL UPDATE statement to modify the specified project record
                     using (SqlCommand command = new SqlCommand("Update Employees set Active = 0 where @EmployeeID=EmployeeID", connection))
                     {
-                        command.Parameters.AddWithValue("@EmployeeID", dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                        command.Parameters.AddWithValue("@EmployeeID", int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()));
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            dataGridView1.Rows.RemoveAt(e.RowIndex);
+                            MessageBox.Show("Deleted successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("An error occurred while deleting the record.");
+                        }
                         // Perform the delete operation based on the selected row
-                        dataGridView1.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Deleted successfully!");
+                       
                     }
                 }
             }

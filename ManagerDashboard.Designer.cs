@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,19 @@
             this.panel1.Size = new System.Drawing.Size(235, 502);
             this.panel1.TabIndex = 0;
             // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(12, 451);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(220, 29);
+            this.button11.TabIndex = 19;
+            this.button11.Text = "Logout";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
             // button10
             // 
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -77,6 +90,7 @@
             this.button10.TabIndex = 18;
             this.button10.Text = "Tasks";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -210,19 +224,6 @@
             this.label1.Size = new System.Drawing.Size(141, 31);
             this.label1.TabIndex = 8;
             this.label1.Text = "Dashboard";
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.button11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(12, 451);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(220, 29);
-            this.button11.TabIndex = 19;
-            this.button11.Text = "Logout";
-            this.button11.UseVisualStyleBackColor = false;
             // 
             // ManagerDashboard
             // 

@@ -47,5 +47,12 @@ namespace SHMS
             LeaveRequests.Show();
             this.Hide();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form Task = new Task();
+            Task.Show();
+            this.Hide();
+        }
     }
 }
